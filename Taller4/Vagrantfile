@@ -24,11 +24,11 @@ Vagrant.configure("2") do |config|
         :libvirt__dhcp_enabled => false,
         :ip => "10.0.0.2",
         :libvirt__forward_mode => "veryisolated"
-      config.vm.network :public_network,
+      nodo2.vm.network :public_network,
         :dev => "br0",
         :mode => "bridge",
         :type => "bridge"
-      config.vm.provider :libvirt do |libvirt|
+      nodo2.vm.provider :libvirt do |libvirt|
         libvirt.storage :file, size: '1G', name: 'nodo2-disk1'
         libvirt.storage :file, size: '1G', name: 'nodo2-disk2'
       end
